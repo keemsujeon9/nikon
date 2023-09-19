@@ -97,7 +97,8 @@
             function eventDay() {
                 let date = new Date(); //오늘날짜
 
-                let event = new Date('2024/09/18 00:00:00'); //이벤트실행
+                let event = new Date('2024/06/16 00:00:00'); //이벤트실행
+                //갤럭시랑 아이폰 둘 다 보이게 하려면 슬러시로 날짜 표시
 
                 let eventDate = event - date;
                 console.log(eventDate);
@@ -166,11 +167,10 @@
                 navigationTooltips: ['', '', '', '', ''],
                 afterLoad: function (origin, destination, direction) {
 
-
                     //section 1
                     if (destination.index == 0) {
                         document.querySelector('#section1').querySelector('.txt h4').style.transform = 'translateY(30%)';
-                        document.querySelector('#section2').querySelector('.txt h4').style.opacity = '0';
+                        document.querySelector('#section1').querySelector('.txt h4').style.opacity = '0';
 
 
                         //document.querySelector('#section3').querySelector('p').style.opacity = 1;
