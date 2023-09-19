@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens</title>
+    <link rel="stylesheet" href="css/lens.css">
+
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            
+
+            $(function () {
+
+                let depth01 = $('header .inner nav .gnb .depth01 > a');
+                let depth02 = $('header .inner nav .gnb .depth01 .depth02');
+                let open = $('header .inner .menu');
+                let close = $('header .inner nav .menu_close');
+                let nav = $('header .inner nav');
+
+                $(open).click(function () {
+                    $(nav).animate({
+                        'right': '0'
+                    }, 600)
+                });//open.click
+
+                $(close).click(function () {
+                    $(nav).animate({
+                        'right': '-50%'
+                    }, 900)
+                    $(depth02).slideUp();
+                });//close.click
+
+                $(depth01).click(function () {
+                    if ($(this).next().css('display') == 'none') {
+                        $(depth02).slideUp(700);
+                        $(this).next().slideDown(700);
+                    } else {
+                        $(this).next().slideUp(700);
+                    }
+                });//depth01.click
+            });//jquery end
+
+        };//script end
+
+
+
+</script>
+</head>
+<body>
+
+    <header>
+        <div class="inner">
+            <h1><img src="img/logo_01.png" alt=""></h1>
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div><!-- .menu end -->
+
+            <nav>
+                <div class="menu_close">
+                    <span></span>
+                    <span></span>
+                </div><!-- .menu_close end -->
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">제품정보</a>
+                        <ul class="depth02">
+                            <li><a href="#">SLR 카메라</a></li>
+                            <li><a href="#">미러리스 카메라</a></li>
+                            <li><a href="#">콤팩트 카메라</a></li>
+                            <li><a href="#">렌즈</a></li>
+                            <li><a href="#">스피드라이트</a></li>
+                            <li><a href="#">거리측정기</a></li>
+                            <li><a href="#">쌍안경 / etc</a></li>
+                            <li><a href="#">액세서리</a></li>
+                            <li><a href="#">소프트웨어</a></li>
+                            <li><a href="#">카탈로그</a></li>
+                            <li><a href="#">스페셜 콘텐츠</a></li>
+                            <li><a href="#">판매점</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">E-shop</a>
+                        <ul class="depth02">
+                            <li><a href="#">제품별 구매</a></li>
+                            <li><a href="#">패키지 / 아웃렛</a></li>
+                            <li><a href="#">타임세일</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">etc</a>
+                        <ul class="depth02">
+                            <li><a href="#">니콘스쿨</a></li>
+                            <li><a href="#">CLUB : N</a></li>
+                            <li><a href="#">고객지원</a></li>
+                            <li><a href="#">회사소개</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+                </ul><!-- .gnb end -->
+            </nav>
+        </div><!-- .inner end -->
+    </header>
+
+    <section>
+        <div class="inner">
+            <div class="title">
+                <h3>렌즈 <span>NIKKOR Lens</span></h3>
+            </div><!-- .title end -->
+
+            <div class="list">
+
+                <div class="item">
+                    <figure>
+                        <img src="img/new&hot_렌즈.png" alt="">
+                    </figure>
+                    <div class="txt">
+
+                    </div><!-- .txt end -->
+                </div><!-- item end -->
+            </div><!-- .list end -->
+        </div><!-- inner end -->
+
+        
+    </section>
+
+
+
+    
+</body>
+</html>

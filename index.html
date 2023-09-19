@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>니콘</title>
+
+    <link rel="stylesheet" href="lib/dist/fullpage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/니콘.css">
+
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+    <script src="lib/dist/fullpage.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+    <script>
+
+
+
+
+
+        $(function () {
+            let num1 = document.querySelector('.num1');
+            let num2 = document.querySelector('.num2');
+
+
+            let mouse = document.querySelector('.mouse');
+          
+            document.onmousemove = function (e) {
+                let mouseX = e.pageX;
+                let mouseY = e.pageY;
+
+                mouse.style.left = mouseX + 10 + 'px';
+                console.log(mouseX + 'px')
+                mouse.style.top = mouseY + 'px';
+
+            }//.onmousemove
+
+
+
+            let depth01 = $('header .inner nav .gnb .depth01 > a');
+            let depth02 = $('header .inner nav .gnb .depth01 .depth02');
+            let open = $('header .inner .menu');
+            let close = $('header .inner nav .menu_close');
+            let nav = $('header .inner nav');
+
+            $(open).click(function () {
+                $(nav).animate({
+                    'right': '0'
+                }, 600)
+            });//open.click
+
+            open.mouseenter(function(){
+                mouse.style.transform = 'scale(3)';
+                mouse.style.transition = '0.3s';
+                mouse.style.backgroundcolor = '#fff'
+            });
+
+            open.mouseleave(function(){
+                mouse.style.transform = 'scale(1)';
+                mouse.style.transition = '0.5s';
+            });
+
+            $(close).click(function () {
+                $(nav).animate({
+                    'right': '-50%'
+                }, 900)
+                $(depth02).slideUp();
+            });//close.click
+
+            $(depth01).click(function () {
+                if ($(this).next().css('display') == 'none') {
+                    $(depth02).slideUp(700);
+                    $(this).next().slideDown(700);
+                } else {
+                    $(this).next().slideUp(700);
+                }
+            });//depth01.click
+
+
+            let tab = $('#section3 .inner .new .tab ul li');
+            let list = $('#section3 .inner .new .list');
+           
+            $(tab).click(function () {
+                $(tab).removeClass('on');
+                $(this).addClass('on');
+
+                $(list).removeClass('on');
+                $(list).eq($(this).index()).addClass('on');
+            });//tab.click 
+
+
+            function eventDay() {
+                let date = new Date(); //오늘날짜
+
+                let event = new Date('2024-9-18 00:00:00'); //이벤트실행
+
+                let eventDate = event - date;
+                console.log(eventDate);
+
+                //일
+                let eventD = Math.floor(eventDate / (60 * 1000 * 60 * 24)) + 1;
+                console.log(eventD)
+
+
+                //시간
+                let eventHour = Math.floor((eventDate % (60 * 1000 * 60 * 24)) / (60 * 1000 * 60));
+                console.log(eventHour)
+
+                //분
+                let eventMin = Math.floor((eventDate % (60 * 1000 * 60)) / (60 * 1000));
+
+                console.log(eventMin)
+
+                //초
+                let eventSec = Math.floor((eventDate % (60 * 1000)) / 1000);
+                console.log(eventSec)
+
+                let time = document.querySelector('.time');
+
+                time.innerHTML = '<span>' + String(eventD).padStart(2, '0') + '</span>' + '일' + '&nbsp;' + '<span>' + String(eventHour).padStart(2, '0') + '</span>' + '시간' + '&nbsp;' + '<span>' + String(eventMin).padStart(2, '0') + '</span>' + '분' + '&nbsp;' + '<span>' + String(eventSec).padStart(2, '0') + '</span>' + '초';
+
+
+
+            }//eventDay()
+
+            eventDay()
+            setInterval(eventDay, 1000)
+
+
+            //swiper start//
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                },
+            });//swiper
+           
+            //fullpage start//
+            var myFullpage = new fullpage('#fullpage', {
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
+                /* sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C', '#d9d9d9'], */
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['', '', '', '', ''],
+
+            });//fullpage
+
+
+
+        });//jquery end
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="mouse"></div>
+    <header>
+        <div class="inner">
+            <h1><img src="img/logo_01.png" alt=""></h1>
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div><!-- .menu end -->
+
+            <nav>
+                <div class="menu_close">
+                    <span></span>
+                    <span></span>
+                </div><!-- .menu_close end -->
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">제품정보</a>
+                        <ul class="depth02">
+                            <li><a href="#">SLR 카메라</a></li>
+                            <li><a href="#">미러리스 카메라</a></li>
+                            <li><a href="#">콤팩트 카메라</a></li>
+                            <li><a href="#">렌즈</a></li>
+                            <li><a href="#">스피드라이트</a></li>
+                            <li><a href="#">거리측정기</a></li>
+                            <li><a href="#">쌍안경 / etc</a></li>
+                            <li><a href="#">액세서리</a></li>
+                            <li><a href="#">소프트웨어</a></li>
+                            <li><a href="#">카탈로그</a></li>
+                            <li><a href="#">스페셜 콘텐츠</a></li>
+                            <li><a href="#">판매점</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">E-shop</a>
+                        <ul class="depth02">
+                            <li><a href="#">제품별 구매</a></li>
+                            <li><a href="#">패키지 / 아웃렛</a></li>
+                            <li><a href="#">타임세일</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">etc</a>
+                        <ul class="depth02">
+                            <li><a href="#">니콘스쿨</a></li>
+                            <li><a href="#">CLUB : N</a></li>
+                            <li><a href="#">고객지원</a></li>
+                            <li><a href="#">회사소개</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+                </ul><!-- .gnb end -->
+            </nav>
+        </div><!-- .inner end -->
+    </header>
+
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="main_visual">
+                <video loop muted data-autoplay playsinline>
+                    <source src="img/main_최최종.mp4" type="video/mp4" />
+                </video>
+                <div class="inner">
+                    <figure>
+                        <img src="img/main.png" alt="">
+                    </figure>
+                    <div class="txt">
+                        <h1><span>우월함</span>의 차이란</h1>
+                        <h1>이런 것</h1>
+                    </div><!-- .txt end -->
+                </div><!-- .inner end -->
+            </div><!-- .main_visual end -->
+        </div><!-- #section0 end-->
+
+
+        <div class="section" id="section1">
+            <div class="cont01">
+                <div class="inner">
+                    <div class="txt">
+                        <h3>Nikon Imaging Korea</h3>
+                        <h4>한 세기 가까이 축적해온 니콘만의 광학과 정밀 가공에 관한 기술력을 기반으로<br />
+                            고객에게 풍부한 사진, 영상 생활을 제안함으로써, 고객의 가슴을 뛰게 하는 감동창조 경영에 힘쓰고있습니다.<br /><br />
+                            또한, 압도적인 성능의 플래그십 DSLR D6를 비롯하여<br />
+                            풀프레임 미러리스 Z, 거리측정기 COOLSHOT 라인업을 통해 다양한 분야의 영상 사업을 선도하고 있습니다.</h4>
+                    </div><!-- .txt end -->
+                </div><!-- .inner end -->
+            </div><!-- .cont01 end -->
+        </div><!-- #section1 end -->
+
+
+        <div class="section" id="section2">
+            <div class="inner">
+                <div class="title">
+                    <h3>Category</h3>
+                    <h4>니콘 공식 온라인 몰의 다양한 제품을 만나보세요.</h4>
+                </div><!-- .title end -->
+
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="img/category_camera.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/category_lens.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/category_etc.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/category_camera.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/category_lens.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/category_etc.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/category_camera.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/category_lens.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                        <div class="swiper-slide"><img src="img/category_etc.jpg" alt="">
+                            <p><a href="#">보러가기</a></p>
+                        </div>
+                    </div><!-- .swiper-wrapper end -->
+                </div><!-- .swiper end -->
+            </div><!-- .inner end -->
+        </div><!-- #section2 end -->
+
+
+        <div class="section" id="section3">
+            <div class="inner">
+                <div class="title">
+                    <h3>New & Hot</h3>
+                    <h4>지금 가장 인기있는 제품</h4>
+                </div><!-- .title end -->
+
+                <div class="new">
+                    <div class="tab">
+                        <ul>
+                            <li class="on"><a href="#">카메라</a></li>
+                            <li><a href="#">쌍안경</a></li>
+                            <li><a href="#">렌즈</a></li>
+                            <li><a href="#">etc</a></li>
+                        </ul>
+                    </div><!-- .tab end -->
+
+                    <div class="list on">
+                        <div class="item">
+                            <img src="img/new&best_z8.png" alt="카메라">
+                            <figure>
+                                <img src="img/new&best_z8_2.png" alt="">
+                            </figure>
+                            <span>NEW</span>
+                        </div><!-- .item end -->
+
+                        <div class="txt">
+                            <h5>Z 8 <span>[미러리스 카메라]</span></h5>
+                            <ul>
+                                <li>- 소형·경량의 <strong>기동력</strong>이 뛰어난 바디</li>
+                                <li>- 세로 촬영을 더욱 쾌적하게 해주는 세로 화면 표시</li>
+                                <li>- 안정적인 핸드헬드 촬영이 가능한 최대 6.0단※1의 <strong>손떨림 보정</strong> 효과</li>
+                                <li>- 8.3K 60p RAW 영상 내부 기록 가능</li>
+                            </ul>
+                        </div><!-- .txt end -->
+                    </div><!-- .list end -->
+
+                    <div class="list">
+                        <div class="item">
+                            <img src="img/new&hot_쌍안경.png" alt="쌍안경">
+                            <span>NEW</span>
+                            <figure>
+                                <img src="img/new&hot_쌍안경_2.png" alt="">
+                            </figure>
+                        </div><!-- .item end -->
+                        <div class="txt">
+                            <h5>MIKRON <span>[6x15 CF (Silver) / 7x15 (Black)]</span></h5>
+                            <ul>
+                                <li>- 니콘 쌍안경의 역사를 보여주는 <strong>'MIKRON'</strong> 브랜드</li>
+                                <li>- 콤팩트하고 개성있는 디자인</li>
+                                <li>- 일상에서도 여행지에서도 편리하게 사용할 수 있는 <strong>경량의</strong> 콤팩트한 바디</li>
+                                <li>- 최단 초점 거리 <strong>2.0m</strong>로 미술관 및 박물관에서도 활용 가능</li>
+                            </ul>
+                        </div><!-- .txt end -->
+                    </div><!-- .list end -->
+
+                    <div class="list">
+                        <div class="item">
+                            <img src="img/new&hot_렌즈.png" alt="렌즈">
+                            <span>NEW</span>
+                            <figure>
+                                <img src="img/new&hot_렌즈_2.png" alt="">
+                            </figure>
+                        </div><!-- .item end -->
+                        <div class="txt">
+                            <h5>NIKKOR Z <span>[180-600mm f / 5.6 - 6.3 VR]</span></h5>
+                            <ul>
+                                <li>- 광범위한 촬영 범위를 커버하는 <strong>초망원</strong>줌렌즈</li>
+                                <li>- 움직임이 빠른 피사체도 포착하는 뛰어난 <strong>기동력</strong></li>
+                                <li>- <strong>부드러운</strong> 조작을 가능하게 하는 설계</li>
+                                <li>- <strong>선명한</strong> 묘사를 가능하게 하는 우수한 광학 성능</li>
+                            </ul>
+                        </div><!-- .txt end -->
+                    </div><!-- .list end -->
+
+                    <div class="list">
+                        <div class="item">
+                            <img src="img/new&hot_etc.png" alt="etc">
+                            <span>BEST</span>
+                            <figure>
+                                <img src="img/new&hot_etc_2.png" alt="">
+                            </figure>
+                        </div><!-- .item end -->
+                        <div class="txt">
+                            <h5>COOLSHOT PROII STABILIZED</h5>
+                            <ul>
+                                <li>- 기존보다 진화된 <strong>손떨림</strong> 기술</li>
+                                <li>- 시리즈 중 <strong>최고급</strong> 모델</li>
+                            </ul>
+                        </div><!-- .txt end -->
+                    </div><!-- .list end -->
+                </div><!-- .new end -->
+                <div class="hover">
+                    <p>이미지에 마우스를 올려보세요.</p>
+                </div><!-- .hover end -->
+
+            </div><!-- .inner end -->
+        </div><!-- #section3 end -->
+
+
+        <div class="section" id="section4">
+            <div class="inner">
+                <div class="title">
+                    <h3>Time sale</h3>
+                </div><!-- .title end -->
+
+                <div class="day">
+                    <p>9월 Time sale 까지 남은 시간</p>
+                    <div class="time"></div><!-- .time end -->
+                </div><!-- .day end -->
+
+                <div class="txt">
+                    <p>※ 해당기종 : Z 6 Body(Z6), Z fc BK Body (Zfc), Z fc BK 16-50 KIT (Zfc), Z fc BK 28/2.8 Classic KIT
+                        (Zfc), D850 Body, D850 AF-S 24-120 4G ED VR KIT</p>
+                </div><!-- .txt -->
+            </div><!-- .inner end -->
+        </div><!-- #section0 end-->
+
+        <footer class="section" id="footer">
+            <ul>
+                <li>사이트맵</li>
+                <li>개인정보처리방침</li>
+                <li>사이트 이용약관</li>
+                <li>전자우편 무단수집거부</li>
+            </ul>
+
+            <ul>
+                <li>상호명 : 주식회사 니콘이미징코리아</li>
+                <li>대표이사 : 정해환</li>
+                <li>사업자등록번호 : 104-81-98839</li>
+                <li>통신판매업신고 : 제2018-서울강남-00065호</li>
+            </ul>
+            <ul>
+                <li>주소 : 서울특별시 강남구 테헤란로 97길 36 도심공항타워 22층</li>
+            </ul>
+            <ul>
+                <li>전화번호 : 020-200-6600</li>
+                <li>팩스 : 02-2068-8488</li>
+                <li>이메일 : Support.Nikc@nikon.com</li>
+            </ul>
+            <ul>
+                <li>호스팅제공자 : 주식회사 인터넷이니시어티브</li>
+                <li>© 2023 Nikon Imaging Korea CO., LTD</li>
+            </ul>
+        </footer>
+
+    </div><!-- #fullpage end -->
+</body>
+
+</html>
