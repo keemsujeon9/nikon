@@ -97,7 +97,7 @@
             function eventDay() {
                 let date = new Date(); //오늘날짜
 
-                let event = new Date('2024-9-18 00:00:00'); //이벤트실행
+                let event = new Date('2024.09.18 00:00:00'); //이벤트실행
 
                 let eventDate = event - date;
                 console.log(eventDate);
@@ -164,6 +164,23 @@
                 navigation: true,
                 navigationPosition: 'right',
                 navigationTooltips: ['', '', '', '', ''],
+                afterLoad: function(origin, destination, direction){
+            //section 2
+            if(destination.index == 1){
+                document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(10%)';
+                document.querySelector('#section3').querySelector('.list').style.opacity = '1';
+
+                //document.querySelector('#section3').querySelector('p').style.opacity = 1;
+            }
+
+            //back to original state
+            else if(origin && origin.index == 1){
+                document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(30%)';
+                document.querySelector('#section3').querySelector('.list').style.opacity = '0';
+
+                //document.querySelector('#section3').querySelector('p').style.opacity = 0;
+            }
+        }
 
             });//fullpage
 

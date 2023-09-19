@@ -87,11 +87,11 @@ body.fp-scroll-mac.fp-viewing-3rdPage #section2 .swiper {
     opacity: 1;
 }
 
-body.fp-scroll-mac.fp-viewing-4thPage #section3 .list {
+/* body.fp-scroll-mac.fp-viewing-4thPage #section3 .list {
     transform: translateY(10%);
     opacity: 1;
 }
-
+ */
 /* -------------------------------header start--------------------------- */
 
 header {
