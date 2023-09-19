@@ -167,16 +167,17 @@
                 afterLoad: function(origin, destination, direction){
             //section 2
             if(destination.index == 2){
-                document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(10%)';
-                document.querySelector('#section3').querySelector('.list').style.opacity = '1';
+                document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(30%)';
+                document.querySelector('#section3').querySelector('.list').style.opacity = '0';
+               
 
                 //document.querySelector('#section3').querySelector('p').style.opacity = 1;
             }
 
             //back to original state
             else if(origin && origin.index == 2){
-                document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(30%)';
-                document.querySelector('#section3').querySelector('.list').style.opacity = '0';
+                document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(10%)';
+                document.querySelector('#section3').querySelector('.list').style.opacity = '1';
 
                 //document.querySelector('#section3').querySelector('p').style.opacity = 0;
             }
