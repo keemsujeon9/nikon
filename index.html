@@ -29,7 +29,7 @@
 
 
             let mouse = document.querySelector('.mouse');
-          
+
             document.onmousemove = function (e) {
                 let mouseX = e.pageX;
                 let mouseY = e.pageY;
@@ -54,13 +54,13 @@
                 }, 600)
             });//open.click
 
-            open.mouseenter(function(){
+            open.mouseenter(function () {
                 mouse.style.transform = 'scale(3)';
                 mouse.style.transition = '0.3s';
                 mouse.style.backgroundcolor = '#fff'
             });
 
-            open.mouseleave(function(){
+            open.mouseleave(function () {
                 mouse.style.transform = 'scale(1)';
                 mouse.style.transition = '0.5s';
             });
@@ -84,7 +84,7 @@
 
             let tab = $('#section3 .inner .new .tab ul li');
             let list = $('#section3 .inner .new .list');
-           
+
             $(tab).click(function () {
                 $(tab).removeClass('on');
                 $(this).addClass('on');
@@ -156,7 +156,7 @@
                     },
                 },
             });//swiper
-           
+
             //fullpage start//
             var myFullpage = new fullpage('#fullpage', {
                 anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
@@ -164,24 +164,62 @@
                 navigation: true,
                 navigationPosition: 'right',
                 navigationTooltips: ['', '', '', '', ''],
-                afterLoad: function(origin, destination, direction){
-            //section 2
-            if(destination.index == 2){
-                document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(30%)';
-                document.querySelector('#section3').querySelector('.list').style.opacity = '0';
-               
+                afterLoad: function (origin, destination, direction) {
 
-                //document.querySelector('#section3').querySelector('p').style.opacity = 1;
-            }
 
-            //back to original state
-            else if(origin && origin.index == 2){
-                document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(10%)';
-                document.querySelector('#section3').querySelector('.list').style.opacity = '1';
+                    //section 1
+                    if (destination.index == 0) {
+                        document.querySelector('#section1').querySelector('.txt h4').style.transform = 'translateY(30%)';
+                        document.querySelector('#section2').querySelector('.txt h4').style.opacity = '0';
 
-                //document.querySelector('#section3').querySelector('p').style.opacity = 0;
-            }
-        }
+
+                        //document.querySelector('#section3').querySelector('p').style.opacity = 1;
+                    }
+
+                    //back to original state
+                    else if (origin && origin.index == 0) {
+                        document.querySelector('#section1').querySelector('.txt h4').style.transform = 'translateY(10%)';
+                        document.querySelector('#section1').querySelector('.txt h4').style.opacity = '1';
+
+                        //document.querySelector('#section3').querySelector('p').style.opacity = 0;
+                    }
+
+                    //section 2
+                    if (destination.index == 1) {
+                        document.querySelector('#section2').querySelector('.swiper').style.transform = 'translateY(30%)';
+                        document.querySelector('#section2').querySelector('.swiper').style.opacity = '0';
+
+
+                        //document.querySelector('#section3').querySelector('p').style.opacity = 1;
+                    }
+
+                    //back to original state
+                    else if (origin && origin.index == 1) {
+                        document.querySelector('#section2').querySelector('.swiper').style.transform = 'translateY(10%)';
+                        document.querySelector('#section2').querySelector('.swiper').style.opacity = '1';
+
+                        //document.querySelector('#section3').querySelector('p').style.opacity = 0;
+                    }
+
+
+
+                    //section 3
+                    if (destination.index == 2) {
+                        document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(30%)';
+                        document.querySelector('#section3').querySelector('.list').style.opacity = '0';
+
+
+                        //document.querySelector('#section3').querySelector('p').style.opacity = 1;
+                    }
+
+                    //back to original state
+                    else if (origin && origin.index == 2) {
+                        document.querySelector('#section3').querySelector('.list').style.transform = 'translateY(10%)';
+                        document.querySelector('#section3').querySelector('.list').style.opacity = '1';
+
+                        //document.querySelector('#section3').querySelector('p').style.opacity = 0;
+                    }
+                }
 
             });//fullpage
 
