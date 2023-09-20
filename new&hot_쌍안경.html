@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쌍안경</title>
+    <link rel="stylesheet" href="css/쌍안경.css">
+
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+
+    <script>
+        window.onload = function () {
+
+
+            $(function () {
+
+                let depth01 = $('header .inner nav .gnb .depth01 > a');
+                let depth02 = $('header .inner nav .gnb .depth01 .depth02');
+                let open = $('header .inner .menu');
+                let close = $('header .inner nav .menu_close');
+                let nav = $('header .inner nav');
+
+                $(open).click(function () {
+                    $(nav).animate({
+                        'right': '0'
+                    }, 600)
+                });//open.click
+
+                $(close).click(function () {
+                    $(nav).animate({
+                        'right': '-50%'
+                    }, 900)
+                    $(depth02).slideUp();
+                });//close.click
+
+                $(depth01).click(function () {
+                    if ($(this).next().css('display') == 'none') {
+                        $(depth02).slideUp(700);
+                        $(this).next().slideDown(700);
+                    } else {
+                        $(this).next().slideUp(700);
+                    }
+                });//depth01.click
+            });//jquery end
+
+        };//script end
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="inner">
+            <h1><a href="#"><img src="img/logo_01.png" alt=""></a></h1>
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div><!-- .menu end -->
+
+            <nav>
+                <div class="menu_close">
+                    <span></span>
+                    <span></span>
+                </div><!-- .menu_close end -->
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">제품정보</a>
+                        <ul class="depth02">
+                            <li><a href="#">SLR 카메라</a></li>
+                            <li><a href="#">미러리스 카메라</a></li>
+                            <li><a href="#">콤팩트 카메라</a></li>
+                            <li><a href="#">렌즈</a></li>
+                            <li><a href="#">스피드라이트</a></li>
+                            <li><a href="#">거리측정기</a></li>
+                            <li><a href="#">쌍안경 / etc</a></li>
+                            <li><a href="#">액세서리</a></li>
+                            <li><a href="#">소프트웨어</a></li>
+                            <li><a href="#">카탈로그</a></li>
+                            <li><a href="#">스페셜 콘텐츠</a></li>
+                            <li><a href="#">판매점</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">E-shop</a>
+                        <ul class="depth02">
+                            <li><a href="#">제품별 구매</a></li>
+                            <li><a href="#">패키지 / 아웃렛</a></li>
+                            <li><a href="#">타임세일</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">etc</a>
+                        <ul class="depth02">
+                            <li><a href="#">니콘스쿨</a></li>
+                            <li><a href="#">CLUB : N</a></li>
+                            <li><a href="#">고객지원</a></li>
+                            <li><a href="#">회사소개</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+                </ul><!-- .gnb end -->
+            </nav>
+        </div><!-- .inner end -->
+    </header>
+
+        <section class="main_visual">
+            <div class="inner">
+                <div class="list">
+                    <div class="item">
+                        <img src="img/new&hot_쌍안경.png" alt="">
+                        <p>MIKRON 6x15 CF (Silver)</p>
+                    </div><!-- .item end -->
+                    <div class="item">
+                        <img src="img/new&hot_쌍안경_2.png" alt="">
+                        <p>MIKRON 7x15 CF (Black)</p>
+                    </div><!-- .item end -->
+                </div><!-- .list end -->
+                <div class="title">
+                    <h3>MIKRON 6x15 CF (Silver) / 7x15 CF (Black)</h3>
+                    <p>금속 소재를 사용한 고급스러운 디자인에 높은 광학 성능까지 갖춘 콤팩트한 쌍안경</p>
+                </div><!-- .title end -->
+
+                <div class="txt">
+                    <p>가까운 거리까지 초점이 맞기 때문에 미술관, 박물관의 작품 감상부터 연극 및 뮤지컬 관람, 여행, 스포츠 경기 관람 등 다양한 상황에서 활용할 수 있습니다.</p>
+
+                    <ul>
+                        <li>니콘 쌍안경의 역사를 보여주는 ‘MIKRON’ 브랜드</li>
+                        <li>콤팩트하고 개성 있는 디자인</li>
+                        <li>일상에서도 여행지에서도 편리하게 사용할 수 있는 경량의 콤팩트한 바디</li>
+                        <li>최단 초점 거리 2.0m로 미술관 및 박물관에서도 활용 가능</li>
+                    </ul>
+                </div><!-- .txt end -->
+            </div><!-- .inner end -->
+        </section><!-- .main_visual end -->
+
+        <footer>
+            <ul>
+                <li>사이트맵</li>
+                <li>개인정보처리방침</li>
+                <li>사이트 이용약관</li>
+                <li>전자우편 무단수집거부</li>
+            </ul>
+    
+            <ul>
+                <li>상호명 : 주식회사 니콘이미징코리아</li>
+                <li>대표이사 : 정해환</li>
+                <li>사업자등록번호 : 104-81-98839</li>
+                <li>통신판매업신고 : 제2018-서울강남-00065호</li>
+            </ul>
+            <ul>
+                <li>주소 : 서울특별시 강남구 테헤란로 97길 36 도심공항타워 22층</li>
+            </ul>
+            <ul>
+                <li>전화번호 : 020-200-6600</li>
+                <li>팩스 : 02-2068-8488</li>
+                <li>이메일 : Support.Nikc@nikon.com</li>
+            </ul>
+            <ul>
+                <li>호스팅제공자 : 주식회사 인터넷이니시어티브</li>
+                <li>© 2023 Nikon Imaging Korea CO., LTD</li>
+            </ul>
+        </footer>
+    
+
+
+   

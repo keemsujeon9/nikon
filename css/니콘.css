@@ -472,6 +472,30 @@ header .inner nav .gnb .depth01 .depth02 li:hover {
     left: 20%;
 }
 
+#section3 .inner .list .txt .more {
+    margin-top: 15.47%;
+    /* background-color: #ffe601;
+    width: 100px;
+    height: 20px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50px; */
+    color: #aaa;
+    position: relative;
+}
+
+#section3 .inner .list .txt .more::before {
+    content: '';
+    width: 75px;
+    height: 2px;
+    background-color: #ffe601;
+    display: block;
+    position: absolute;
+    bottom: -5px;
+}
+
 /* -------------------------------#section4 start--------------------------- */
 
 #section4 {
@@ -551,6 +575,9 @@ footer ul li {
     }
 
 
+    #section3 .inner .list .txt .more::before {
+        display: none;
+    }
 
 }
 
@@ -845,7 +872,7 @@ footer ul li {
 
     #section0 .txt h1 {
         font-size: 57px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     #section2 .swiper .swiper-wrapper .swiper-slide {

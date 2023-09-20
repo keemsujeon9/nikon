@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z8</title>
+    <link rel="stylesheet" href="css/z8.css">
+
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+
+    <script>
+        window.onload = function () {
+
+
+            $(function () {
+
+                let depth01 = $('header .inner nav .gnb .depth01 > a');
+                let depth02 = $('header .inner nav .gnb .depth01 .depth02');
+                let open = $('header .inner .menu');
+                let close = $('header .inner nav .menu_close');
+                let nav = $('header .inner nav');
+
+                $(open).click(function () {
+                    $(nav).animate({
+                        'right': '0'
+                    }, 600)
+                });//open.click
+
+                $(close).click(function () {
+                    $(nav).animate({
+                        'right': '-50%'
+                    }, 900)
+                    $(depth02).slideUp();
+                });//close.click
+
+                $(depth01).click(function () {
+                    if ($(this).next().css('display') == 'none') {
+                        $(depth02).slideUp(700);
+                        $(this).next().slideDown(700);
+                    } else {
+                        $(this).next().slideUp(700);
+                    }
+                });//depth01.click
+            });//jquery end
+
+        };//script end
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="inner">
+            <h1><a href="#"><img src="img/logo_01.png" alt=""></a></h1>
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div><!-- .menu end -->
+
+            <nav>
+                <div class="menu_close">
+                    <span></span>
+                    <span></span>
+                </div><!-- .menu_close end -->
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">제품정보</a>
+                        <ul class="depth02">
+                            <li><a href="#">SLR 카메라</a></li>
+                            <li><a href="#">미러리스 카메라</a></li>
+                            <li><a href="#">콤팩트 카메라</a></li>
+                            <li><a href="#">렌즈</a></li>
+                            <li><a href="#">스피드라이트</a></li>
+                            <li><a href="#">거리측정기</a></li>
+                            <li><a href="#">쌍안경 / etc</a></li>
+                            <li><a href="#">액세서리</a></li>
+                            <li><a href="#">소프트웨어</a></li>
+                            <li><a href="#">카탈로그</a></li>
+                            <li><a href="#">스페셜 콘텐츠</a></li>
+                            <li><a href="#">판매점</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">E-shop</a>
+                        <ul class="depth02">
+                            <li><a href="#">제품별 구매</a></li>
+                            <li><a href="#">패키지 / 아웃렛</a></li>
+                            <li><a href="#">타임세일</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">etc</a>
+                        <ul class="depth02">
+                            <li><a href="#">니콘스쿨</a></li>
+                            <li><a href="#">CLUB : N</a></li>
+                            <li><a href="#">고객지원</a></li>
+                            <li><a href="#">회사소개</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+                </ul><!-- .gnb end -->
+            </nav>
+        </div><!-- .inner end -->
+    </header>
+
+    <section class="main_visual">
+        <div class="inner">
+            <img src="img/z8/top_img.jpg" alt="">
+        </div><!-- inner end -->
+    </section><!-- .main.visual end -->
+
+    <section class="cont01">
+
+
+        <div class="inner">
+            <div class="title">
+                <h3>주요 특징</h3>
+            </div><!-- .title end -->
+            <div class="list">
+                <div class="item">
+                    <figure>
+                        <img src="img/z8/pic_01.jpg" alt="">
+                    </figure>
+                    <div class="txt">
+                        <h4>촬영의 즐거움을 만끽할 수 있는 우수한 기동력</h4>
+                        <p>Z 9보다 약 30%정도 부피를 줄인 콤팩트한 바디에 Z 9의 우수한 성능과 기능을 밸런스 좋게 계승하여 높은 기동성을 실현했습니다. 가방에 수납이 용이하며 다양한
+                            촬영 스타일에 유연하게 대응할 수 있기 때문에 어디든 가볍게 가지고 다니며 크리에이티브한 감성을 마음껏 발휘할 수 있습니다. 사진과 동영상을 가리지 않고 다양한
+                            장면에서 안정적으로 촬영할 수 있습니다.</p>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <div class="txt">
+                        <h4>미러리스 카메라의 새로운 기준이 되는 기계식 셔터리스 기구 실현</h4>
+                        <p>Z 9과 동일하게 롤링 셔터의 왜곡을 최소화한 적층형 CMOS 센서를 탑재했습니다. 기계식 셔터를 탑재하고 있지 않기 때문에 저소음으로 셔터의 마모를 신경쓰지 않고
+                            대량 촬영이 가능합니다.</p>
+                    </div><!-- .txt end -->
+
+                    <figure>
+                        <img src="img/z8/pic_02.jpg" alt="">
+                    </figure>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/z8/pic_03.jpg" alt="">
+                    </figure>
+                    <div class="txt">
+                        <h4>풍부한 계조 표현으로 부드러운 그라데이션을 재현할 수 있는 HEIF형식</h4>
+                        <p>풍경이나 도시의 모습을 HEIF(High Efficiency Image File Format)로 촬영함으로써 풍부한 계조를 최대한으로 살린 저녁 노을 사진이나 넓은
+                            다이내믹 레인지로 노출오버나 노출부족을 억제한 도시 야경의 사진을 얻을 수 있습니다.</p>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <div class="txt">
+                        <h4>카메라 내에 12bit RAW와 10bit ProRes 422 HQ 를 기록하여 간편한 시스템으로 기동성 있는 촬영 가능</h4>
+                        <p>12bit N-RAW, ProRes RAW HQ, 10bit ProRes 422HQ나 H.265의 고품질의 영상을 카메라 내에서 기록 가능합니다. 외장 레코더가
+                            필요없기 때문에 간편한 시스템을 통해 기동성 있게 촬영할 수 있어 새로운 가능성을 펼칠 수 있습니다.</p>
+                    </div><!-- .txt end -->
+
+                    <figure>
+                        <img src="img/z8/pic_04.jpg" alt="">
+                    </figure>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/z8/pic_05.jpg" alt="">
+                    </figure>
+                    <div class="txt">
+                        <h4>4K UHD 60p로 최대 125분※1, 8K UHD 30p로 최대 90분※2 장시간 촬영이 가능</h4>
+                        <p>4K UHD 60p나 8K UHD 30p 동영상을 장시간 촬영할 수 있습니다. Z 9보다 소형·경량의 바디로, 하루종일 진행되는 이벤트 촬영이나 장시간의 다큐멘터리
+                            촬영에도 적합합니다.</p>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <div class="txt">
+                        <h4>8K 오버 샘플링에 의한 고해상도 4K UHD 동영상</h4>
+                        <p>8K 오버 샘플링※1에 의한 고해상도 4K UHD 60p※2/50p※2, 30p, 25p, 24p를 10bit나 8bit로도 기록할 수 있습니다. 고해상도 NIKKOR
+                            Z 렌즈와 조합하여 압도적인 몰입감을 자아내는 4K 영상을 실현합니다.</p>
+                    </div><!-- .txt end -->
+
+                    <figure>
+                        <img src="img/z8/pic_06.jpg" alt="">
+                    </figure>
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+        </div><!-- .inner end -->
+    </section><!-- .cont01 end -->
+
+    <section class="cont02">
+        <div class="inner">
+            <div class="list">
+                <div>
+                    <p>풀사이즈<br/>FX 포맷</p>
+                </div>
+                <div>
+                    <p>유효화소수<br/>4571만 화소</p>
+                </div>
+                <div>
+                    <p>ISO 감도<br/>64-25600</p>
+                </div>
+                <div>
+                    <p>고속연속촬영<br/>약 120fps</p>
+                </div>
+                <div>
+                    <p>고속연속촬영<br/>약 20fps</p>
+                </div>
+                <div>
+                    <p>동영상 촬영<br/>8.3K 60p</p>
+                </div>
+                <div>
+                    <p>동영상 촬영<br/>4K UHD/120p</p>
+                </div>
+                <div>
+                    <p>무게<br/>약 910g</p>
+                </div>
+                <div>
+                    <p>snapBridge<br/>지원</p>
+                </div>
+            </div><!-- .list end -->
+        </div><!-- .inner end -->
+    </section><!-- .cont02 end -->
+
+
+
+
+    <footer>
+        <ul>
+            <li>사이트맵</li>
+            <li>개인정보처리방침</li>
+            <li>사이트 이용약관</li>
+            <li>전자우편 무단수집거부</li>
+        </ul>
+
+        <ul>
+            <li>상호명 : 주식회사 니콘이미징코리아</li>
+            <li>대표이사 : 정해환</li>
+            <li>사업자등록번호 : 104-81-98839</li>
+            <li>통신판매업신고 : 제2018-서울강남-00065호</li>
+        </ul>
+        <ul>
+            <li>주소 : 서울특별시 강남구 테헤란로 97길 36 도심공항타워 22층</li>
+        </ul>
+        <ul>
+            <li>전화번호 : 020-200-6600</li>
+            <li>팩스 : 02-2068-8488</li>
+            <li>이메일 : Support.Nikc@nikon.com</li>
+        </ul>
+        <ul>
+            <li>호스팅제공자 : 주식회사 인터넷이니시어티브</li>
+            <li>© 2023 Nikon Imaging Korea CO., LTD</li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

@@ -21,17 +21,27 @@
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+
+*::selection {
+    background-color: #ffe601;
+    color: #000;
+}
+
+body {
+    font-family: 'Pretendard-Regular';
+    background-color: #000;
+    color: #eee;
+}
+
+
 .inner {
     max-width: 1440px;
     width: calc(100% - 15px);
     margin: 0 auto;
 }
 
-body {
-    font-family: 'Pretendard-Regular';
-    background-color: #fff;
-    color: #000;
-}
+
+/* -------------------------------header start--------------------------- */
 
 header {
     width: 100%;
@@ -40,8 +50,6 @@ header {
     top: 0;
     left: 0;
     z-index: 999999;
-    background-color: #000;
-    color: #fff;
 }
 
 header .inner {
@@ -87,7 +95,7 @@ header .inner nav {
     position: fixed;
     top: 0;
     right: -50%;
-    z-index: 9999;
+    z-index: 9;
     padding-left: 30px;
 }
 
@@ -144,98 +152,125 @@ header .inner nav .gnb .depth01 .depth02 li:hover {
     color: #ffe601;
 }
 
-section .inner {
-    margin: 150px auto;
+.main_visual .inner {
+    width: 100%;
 }
 
-section .inner .title {
-    font-size: 60px;
+.main_visual img {
+    margin: 100px auto;
+    display: block;
+    width: 60%;
+    height: 500px;
+}
+
+.cont01 .inner .title {
+    margin: 100px 0;
+    font-size: 50px;
     font-weight: bold;
-    border-bottom: 1px solid #aaa;
-    padding-bottom: 20px;
-}
-
-section .inner .title span {
-    font-size: 40px;
-    font-weight: normal;
-    color: #aaa;
-}
-
-section .inner .list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
-
-section .inner .list .item {
-    width: calc(100% / 3 - 20px);
-    margin-top: 30px;
-    border: 1px solid #d9d9d9;
-    border-radius: 50px;
-    padding: 50px 0;
+    text-align: center;
     position: relative;
 }
 
-section .inner .list .item figure {
-    width: calc(100% - 50px);
-    height: auto;
-    margin: 0 auto;
+.cont01 .inner .title h3::before {
+    content: '';
+    width: 200px;
+    height: 3px;
+    background-color: #74d6ff;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-section .inner .list .item figure img {
+.cont01 .inner .list .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.cont01 .inner .list .item figure {
+    width: calc(100% / 2 - 20px);
+    height: auto;
+}
+
+.cont01 .inner .list .item figure img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
-   
 }
 
-section .inner .list .item .txt {
-    margin: 50px 0;  
-    text-align: center;
+.cont01 .inner .list .item .txt {
+    width: calc(100% / 2 - 20px);
+    height: 200px;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-section .inner .list .item .txt h3 {
-    width: calc(100% - 50px);
-    margin: 0 auto;
-    font-size: 25px;
-    /* font-weight: bold; */
-    padding-top: 30px;
-    margin-bottom: 100px;
-    border-top: 1px solid #d9d9d9;
-}
-
-section .inner .list .item .txt strong {
-    font-size: 30px;
-    font-weight: bold;
-}
-
-section .inner .list .item .txt strong span {
-    font-size: 18px;
-}
-
-section .inner .list .item .buy {
-    margin: 0 auto;
-    width: calc(100% - 100px);
-    height: 40px;
-    background-color: #ffe601;
-    border-radius: 20px;
-    text-align: center;
-    line-height: 40px;
+.cont01 .inner .list .item .txt h4 {
     font-size: 20px;
     font-weight: bold;
+    margin-left: 15px;
+    position: relative;
 }
 
-section .inner .list .item >span {
-    color: #aaa;
-    font-size: 20px;
+.cont01 .inner .list .item .txt h4::after {
+    content: '';
+    width: 3px;
+    height: 20px;
+    background-color: #74d6ff;
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 0;
+    left: -10px;
 }
 
-section .inner .list .item .buy:hover {
-    background-color: #fff;
-    border: 2px solid #ffe601;
+.cont01 .inner .list .item .txt p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #aaa;
+}
+
+.cont02 .inner .list {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.cont02 .inner .list div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 8);
+    height: 150px;
+    border: 1px solid #ffe601;
+    line-height: 1.7;
+    font-size: 18px;
+    color: #aaa;
+    border-right: none;
+}
+
+.cont02 .inner .list div:last-child {
+    border-right: 1px solid #ffe601;
+}
+
+
+footer {
+    height: 200px;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaaaaa7c;
+}
+
+footer ul:first-child {
+    margin-top: 10px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
 }

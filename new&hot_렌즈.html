@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>렌즈</title>
+    <link rel="stylesheet" href="css/뉴핫렌즈.css">
+
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+
+    <script>
+        window.onload = function () {
+
+
+            $(function () {
+
+                let depth01 = $('header .inner nav .gnb .depth01 > a');
+                let depth02 = $('header .inner nav .gnb .depth01 .depth02');
+                let open = $('header .inner .menu');
+                let close = $('header .inner nav .menu_close');
+                let nav = $('header .inner nav');
+
+                $(open).click(function () {
+                    $(nav).animate({
+                        'right': '0'
+                    }, 600)
+                });//open.click
+
+                $(close).click(function () {
+                    $(nav).animate({
+                        'right': '-50%'
+                    }, 900)
+                    $(depth02).slideUp();
+                });//close.click
+
+                $(depth01).click(function () {
+                    if ($(this).next().css('display') == 'none') {
+                        $(depth02).slideUp(700);
+                        $(this).next().slideDown(700);
+                    } else {
+                        $(this).next().slideUp(700);
+                    }
+                });//depth01.click
+            });//jquery end
+
+        };//script end
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="inner">
+            <h1><a href="#"><img src="img/logo_01.png" alt=""></a></h1>
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div><!-- .menu end -->
+
+            <nav>
+                <div class="menu_close">
+                    <span></span>
+                    <span></span>
+                </div><!-- .menu_close end -->
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">제품정보</a>
+                        <ul class="depth02">
+                            <li><a href="#">SLR 카메라</a></li>
+                            <li><a href="#">미러리스 카메라</a></li>
+                            <li><a href="#">콤팩트 카메라</a></li>
+                            <li><a href="#">렌즈</a></li>
+                            <li><a href="#">스피드라이트</a></li>
+                            <li><a href="#">거리측정기</a></li>
+                            <li><a href="#">쌍안경 / etc</a></li>
+                            <li><a href="#">액세서리</a></li>
+                            <li><a href="#">소프트웨어</a></li>
+                            <li><a href="#">카탈로그</a></li>
+                            <li><a href="#">스페셜 콘텐츠</a></li>
+                            <li><a href="#">판매점</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">E-shop</a>
+                        <ul class="depth02">
+                            <li><a href="#">제품별 구매</a></li>
+                            <li><a href="#">패키지 / 아웃렛</a></li>
+                            <li><a href="#">타임세일</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">etc</a>
+                        <ul class="depth02">
+                            <li><a href="#">니콘스쿨</a></li>
+                            <li><a href="#">CLUB : N</a></li>
+                            <li><a href="#">고객지원</a></li>
+                            <li><a href="#">회사소개</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+                </ul><!-- .gnb end -->
+            </nav>
+        </div><!-- .inner end -->
+    </header>
+
+    <section class="main_visual">
+        <div class="inner">
+            <img src="img/뉴 핫 렌즈/top_img (1).jpg" alt="">
+        </div><!-- inner end -->
+    </section><!-- .main.visual end -->
+
+    <section class="cont01">
+
+
+        <div class="inner">
+            <div class="title">
+                <h3>주요 특징</h3>
+            </div><!-- .title end -->
+            <div class="list">
+                <div class="item">
+                    <figure>
+                        <img src="img/뉴 핫 렌즈/pic_01.jpg" alt="">
+                    </figure>
+                    <div class="txt">
+                        <h4>표현의 폭을 넓혀주는 180-600mm의 넓은 줌 영역</h4>
+                        <p>NIKKOR Z 대망의 초망원 줌렌즈로, 180mm부터 600mm까지의 폭넓은 초점거리 영역에 대응합니다. 가까운 피사체, 먼 피사체를 모두 손쉽게 프레이밍 할 수
+                            있을뿐 아니라 야생 동물, 빠르게 움직이는 비행기를 크게 포착하거나 야생 조류떼를 넓게 담아내는 등 다양한 피사체를 이 렌즈 하나로 촬영할 수 있습니다. 폭넓은 줌
+                            영역을 활용함으로써 표현의 폭이 훨씬 넓어집니다.</p>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <div class="txt">
+                        <h4>뛰어난 근거리 촬영 성능으로 가까운 피사체의 촬영도 쾌적하게</h4>
+                        <p>초망원 줌렌즈이면서 최단 촬영 거리는 1.3m(광각단. 망원단은 2.4m)로 렌즈 교환을 하지 않고 가까이 있는 피사체를 촬영할 수 있습니다. 또한 최대 촬영 배율
+                            0.25배를 살려 풀꽃이나 나무 위의 동물을 크고 인상적으로 표현할 수 있습니다.</p>
+                    </div><!-- .txt end -->
+
+                    <figure>
+                        <img src="img/뉴 핫 렌즈/pic_03.jpg" alt="">
+                    </figure>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/뉴 핫 렌즈/pic_04.jpg" alt="">
+                    </figure>
+                    <div class="txt">
+                        <h4>텔레컨버터 장착※ 시, 초점 거리는 최대 1200mm</h4>
+                        <p>Z TELECONVERTER TC-1.4x/2.0x (모두 별매)를 사용함으로써 망원측의 초점 거리는 각각 840mm, 1200mm까지 확장됩니다. 텔레컨버터 사용
+                            시※에도 높은 해상력을 유지하기 때문에 멀리 떨어진 피사체도 고화질로 포착합니다. TC-2.0x장착 시에는 최대 촬영 배율이 0.5배가 되어 더욱 박진감 넘치는
+                            표현이 가능합니다.</p>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <div class="txt">
+                        <h4>핸드헬드 촬영을 보다 쾌적하게 즐길 수 있는 경량 설계</h4>
+                        <p>AF-S NIKKOR 200-500mm f/5.6E ED VR 보다 넓은 초점 거리 범위를 가지면서도 더 가볍습니다. 무게는 약 1955g※으로 초점거리 600mm
+                            까지 커버하는 렌즈이지만 경량이기 때문에 핸드헬드로도 쾌적하게 촬영할 수 있습니다.</p>
+                    </div><!-- .txt end -->
+
+                    <figure>
+                        <img src="img/뉴 핫 렌즈/pic_06.jpg" alt="">
+                    </figure>
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <figure>
+                        <img src="img/뉴 핫 렌즈/pic_07.jpg" alt="">
+                    </figure>
+                    <div class="txt">
+                            <h4>5.5단※의 뛰어난 손떨림 보정 효과</h4>
+                            <p>5.5단※의 손떨림 보정 효과는 나무 그늘이나 저녁 노을 등 어둑어둑한 장면에서도 손떨림의 영향을 억제하여 촬영할 수 있습니다.</p>
+                        </div><!-- .txt end -->
+
+                    </div><!-- .item end -->
+
+                    <div class="item">
+                        <div class="txt">
+                            <h4>쾌적한 조작성을 실현하는 인터널 줌 기구</h4>
+                            <p>주밍 시 전체 길이의 변화와 대물 렌즈의 움직임이 없고 중심 이동이 적은 인터널 줌 기구를 사용했습니다. 렌즈를 확실하게 유지할 수 있기 때문에 안정적인
+                                프레이밍이 가능합니다. 자중낙하의 걱정이 없어 가지고 다니거나 위를 올려다 보는 촬영도 편리하게 즐길 수 있습니다. 주밍 시 렌즈 움직임이 적기 때문에 렌즈
+                                안으로 먼지 등이 들어갈 우려가 적은 장점이 있습니다.</p>
+                        </div><!-- .txt end -->
+                        <figure>
+                            <img src="img/뉴 핫 렌즈/pic_09.jpg" alt="">
+                        </figure>
+                    </div><!-- .item end -->
+                </div><!-- .list end -->
+            </div><!-- .inner end -->
+    </section><!-- .cont01 end -->
+
+    <section class="cont02">
+        <div class="inner">
+            <div class="list">
+             <div>
+                <p>FX 포맷</p>
+             </div>
+             <div>
+                <p>ED</p>
+             </div>
+             <div>
+                <p>AS</p>
+             </div>
+             <div>
+                <p>SIC</p>
+             </div>
+             <div>
+                <p>STM</p>
+             </div>
+             <div>
+                <p>IF</p>
+             </div>
+             <div>
+                <p>VR</p>
+             </div>
+             <div>
+                <p>M/A</p>
+             </div>
+            </div><!-- .list end -->
+        </div><!-- .inner end -->
+    </section><!-- .cont02 end -->
+
+
+
+
+    <footer>
+        <ul>
+            <li>사이트맵</li>
+            <li>개인정보처리방침</li>
+            <li>사이트 이용약관</li>
+            <li>전자우편 무단수집거부</li>
+        </ul>
+
+        <ul>
+            <li>상호명 : 주식회사 니콘이미징코리아</li>
+            <li>대표이사 : 정해환</li>
+            <li>사업자등록번호 : 104-81-98839</li>
+            <li>통신판매업신고 : 제2018-서울강남-00065호</li>
+        </ul>
+        <ul>
+            <li>주소 : 서울특별시 강남구 테헤란로 97길 36 도심공항타워 22층</li>
+        </ul>
+        <ul>
+            <li>전화번호 : 020-200-6600</li>
+            <li>팩스 : 02-2068-8488</li>
+            <li>이메일 : Support.Nikc@nikon.com</li>
+        </ul>
+        <ul>
+            <li>호스팅제공자 : 주식회사 인터넷이니시어티브</li>
+            <li>© 2023 Nikon Imaging Korea CO., LTD</li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>
